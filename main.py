@@ -38,7 +38,9 @@ def gemini_consult(query):
     return response
 
 
-st.title("Bienvenidos al ChatBot Py con Gemini AI")
+st.set_page_config(page_title="Chatbot con Gemini AI", page_icon="🤖")
+
+st.title("""Bienvenidos al ChatBot Py con :rainbow[Gemini AI]""")
 st.divider()
 
 if "messages" not in st.session_state:
