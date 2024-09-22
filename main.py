@@ -33,7 +33,7 @@ safety_settings = [
 
 
 def gemini_consult(query):
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(query, safety_settings=safety_settings)
     return response
 
