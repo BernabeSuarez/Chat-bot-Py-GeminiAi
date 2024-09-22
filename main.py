@@ -41,14 +41,11 @@ generation_config = {
 }
 def gemini_consult(query):
    model = genai.GenerativeModel(
-  model_name="gemini-1.5-flash",
-  generation_config=generation_config,
-  # safety_settings = Adjust safety settings
-  # See https://ai.google.dev/gemini-api/docs/safety-settings
-)
+   model_name="gemini-1.5-flash",
+   generation_config=generation_config)
 
-    response = model.generate_content(query, safety_settings=safety_settings)
-    return response
+   response = model.generate_content(query, safety_settings=safety_settings)
+   return response
 
 
 st.set_page_config(page_title="Chatbot con Gemini AI", page_icon="🤖")
