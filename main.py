@@ -44,7 +44,7 @@ def gemini_consult(query):
    model_name="gemini-1.5-flash",
    generation_config=generation_config)
 
-   response = model.generate_content(query, safety_settings=safety_settings)
+   response = model.generate_content(query)
    return response
 
 
