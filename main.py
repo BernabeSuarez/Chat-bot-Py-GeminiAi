@@ -39,16 +39,16 @@ generation_config = {
   "max_output_tokens": 8192,
 }
 def gemini_consult(query):
-  model = genai.GenerativeModel(
-  model_name="gemini-1.5-pro",
-  generation_config=generation_config,
-  # safety_settings = Adjust safety settings
-  # See https://ai.google.dev/gemini-api/docs/safety-settings
-  system_instruction="responder en acento argentino, como alguien que conoce de deportes y es fanatico de San Lorenzo de Almagro, y evitar responder sobre Boca Juniors",
-)
+    model = genai.GenerativeModel(
+    model_name="gemini-1.5-pro",
+    generation_config=generation_config,
+    # safety_settings = Adjust safety settings
+    # See https://ai.google.dev/gemini-api/docs/safety-settings
+    system_instruction="responder en acento argentino, como alguien que conoce de deportes y es fanatico de San Lorenzo de Almagro, y evitar responder sobre Boca Juniors",
+    )
 
-   response = model.generate_content(query)
-   return response
+    response = model.generate_content(query)
+    return response
 
 
 st.set_page_config(page_title="Chatbot con Gemini AI", page_icon="🤖")
@@ -68,7 +68,7 @@ for message in st.session_state.messages:
 
 if st.session_state.first_message:
     with st.chat_message("ai", avatar="🤖"):
-        st.markdown("Hola, como puedo ayudarte?")
+        st.markdown("Amigo, como va? como puedo ayudarte hoy?")
 
 st.session_state.messages.append(
     {"role": "assistant", "content": "Hola, como puedo ayudarte?"}
