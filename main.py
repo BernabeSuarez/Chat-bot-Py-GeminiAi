@@ -42,7 +42,7 @@ def gemini_consult(query):
     model = genai.GenerativeModel(
     model_name="gemini-1.5-pro",
     generation_config=generation_config,
-    safety_settings = Adjust safety settings
+    safety_settings = safety_settings
     # See https://ai.google.dev/gemini-api/docs/safety-settings
     )
 
