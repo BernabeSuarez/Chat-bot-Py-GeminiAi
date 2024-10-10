@@ -42,9 +42,8 @@ def gemini_consult(query):
     model = genai.GenerativeModel(
     model_name="gemini-1.5-pro",
     generation_config=generation_config,
-    # safety_settings = Adjust safety settings
+    safety_settings = Adjust safety settings
     # See https://ai.google.dev/gemini-api/docs/safety-settings
-    system_instruction="responder en acento argentino, como alguien que conoce de deportes y es fanatico de San Lorenzo de Almagro, y evitar responder sobre Boca Juniors",
     )
 
     response = model.generate_content(query)
