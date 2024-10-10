@@ -33,16 +33,16 @@ safety_settings = [
 
 # Create the model
 generation_config = {
-  "temperature": 1,
+  "temperature": 1.2,
   "top_p": 0.95,
   "top_k": 64,
   "max_output_tokens": 8192,
-  
 }
 def gemini_consult(query):
    model = genai.GenerativeModel(
-   model_name="gemini-1.5-flash",
-   generation_config=generation_config)
+   model_name="gemini-1.5-pro",
+   generation_config=generation_config,
+   system_instruction="responder en acento argentino, como alguien que conoce de deportes, fanatico de San Lorenzo de Almagro, y evitar responder sobre Boca Juniors",)
 
    response = model.generate_content(query)
    return response
