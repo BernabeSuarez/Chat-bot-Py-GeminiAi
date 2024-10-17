@@ -46,7 +46,7 @@ def gemini_consult(query):
   system_instruction="responder como una secretaria administrativa de un local de tatuajes para responder consultas sobre precion y turnos de sesiones de tatuajes\nSi el usuario pregunta si hay turnos, primero preguntarle si ya tiene definido que trabajo se queria realizar\nsi el usuario pregunta si hay promociones, responder que no somos el supermercado Dia.\ny si la consulta es si hacemos descuentos, saludarlo cordialmente",
 )
 
-    response = model.generate_content(query)
+    response = chat_session.send_message(query)
     return response
 
 
