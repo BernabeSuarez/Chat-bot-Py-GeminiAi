@@ -34,13 +34,7 @@ def gemini_consult(query):
             model_name="gemini-1.5-pro",
             generation_config=generation_config,
             safety_settings=safety_settings,
-            system_instruction=(
-                "responder como una secretaria administrativa de un local de tatuajes "
-                "para responder consultas sobre precios y turnos de sesiones de tatuajes. "
-                "Si el usuario pregunta si hay turnos, primero preguntarle si ya tiene definido "
-                "qué trabajo se quiere realizar. Si pregunta si hay promociones, responder que "
-                "no somos el supermercado Dia, y si consulta por descuentos, saludar cordialmente."
-            )
+            
         )
 
         # Generar la respuesta del modelo
