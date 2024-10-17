@@ -33,18 +33,18 @@ safety_settings = [
 
 # Create the model
 generation_config = {
-  "temperature": 1.2,
+ "temperature": 1,
   "top_p": 0.95,
   "top_k": 64,
   "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
 }
 def gemini_consult(query):
     model = genai.GenerativeModel(
-    model_name="gemini-1.5-pro",
-    generation_config=generation_config,
-    safety_settings = safety_settings
-    # See https://ai.google.dev/gemini-api/docs/safety-settings
-    )
+  model_name="gemini-1.5-pro",
+  generation_config=generation_config,
+  system_instruction="responder como una secretaria administrativa de un local de tatuajes para responder consultas sobre precion y turnos de sesiones de tatuajes\nSi el usuario pregunta si hay turnos, primero preguntarle si ya tiene definido que trabajo se queria realizar\nsi el usuario pregunta si hay promociones, responder que no somos el supermercado Dia.\ny si la consulta es si hacemos descuentos, saludarlo cordialmente",
+)
 
     response = model.generate_content(query)
     return response
